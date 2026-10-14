@@ -40,7 +40,10 @@ function changeQuantity(cart, productId, qty) {
     item.id === productId ? { ...item, quantity: qty } : item
   );
 }
-function removeFromCart() { return notImplemented(); }
+
+function removeFromCart(cart, productId) {
+  return cart.filter(product => product.id !== productId)
+ }
 function calculateCartSubtotal() { return notImplemented(); }
 function calculateOrderTotal() { return notImplemented(); }
 
